@@ -57,7 +57,7 @@ const displayCatagoryDetails = (catagoryDetails) =>{
                     <div class="col-md-8">
                         <div class="card-body">
                         <h5 class="card-title pb-3">${catagoryDetail.title}</h5>
-                        <p class="card-text">${catagoryDetail.details.slice(1,250) + '...'}</p>
+                        <p class="card-text">${catagoryDetail.details.slice(1,380) + '...'}</p>
                         <div class="d-flex author justify-content-between align-items-center mt-3">
                         <div class="profile-img d-flex align-items-center">
                          
