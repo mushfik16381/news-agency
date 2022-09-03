@@ -4,6 +4,10 @@ body{
 }
 a{
     text-decoration: none;
+    color: #111;
+}
+a:hover{
+    color: #5D5FEF;
 }
 ol,ul{
     list-style: none;

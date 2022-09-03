@@ -9,7 +9,7 @@ const displayCatagory = (catagories) =>{
         const catagoryDiv = document.createElement('li');
 
         catagoryDiv.innerHTML=`
-        <a href="#" onclick="catagoryLoadDeatails('${catagory.category_id}')">${catagory.category_name}</a>
+        <a href="#" class="active" aria-current="page" onclick="catagoryLoadDeatails('${catagory.category_id}')">${catagory.category_name}</a>
         `;
         catagoryContainer.appendChild(catagoryDiv);
         // console.log(catagory)
@@ -65,19 +65,17 @@ const displayCatagoryDetails = (catagoryDetails) =>{
     });
 }
 
-let modalData = (_id) =>
-{
-    let url = ` https://openapi.programming-hero.com/api/news/${_id}`
+const modalData = (_id) =>{
+    const url = ` https://openapi.programming-hero.com/api/news/${_id}`
     fetch(url)
     .then(res => res.json())
-    .then(res => displayModal(res.data[0]))
+    .then(data => displayModal(data.data[0]))
 }
 
-let displayModal = (id) =>
-{
-    let modalTitle = document.getElementById('exampleModalLabel');
+const displayModal = (id) =>{
+    const modalTitle = document.getElementById('exampleModalLabel');
     modalTitle.innerText = id.title;
-    let discription = document.getElementById('modal-text');
+    const discription = document.getElementById('modal-text');
     discription.innerText = id.details;
 }
 
