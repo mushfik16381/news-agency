@@ -9,6 +9,7 @@ ol,ul{
     list-style: none;
     padding: 0;
 }
+
 hr{
     border-bottom: 1px solid rgb(126, 126, 126);
     width: 90%;
@@ -48,4 +49,21 @@ hr{
 }
 ul{
     display: inline-block;
+}
+.data{
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    background: #faffff;
+    -webkit-box-shadow: 12px 12px 33px #a0a3a3, -12px -12px 33px #ffffff;
+    box-shadow: 12px 12px 33px #a0a3a3, -12px -12px 33px #ffffff;
+    padding: 20px;
+    margin: 30px 0;
+}
+.profile-img{
+    width: 30%;
+border-radius: 50%;
+}
+.profile-img p{
+    margin-bottom: 0;
+    margin-left: 10px;
 }
