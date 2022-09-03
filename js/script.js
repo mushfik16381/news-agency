@@ -20,6 +20,7 @@ const displayCatagory = (catagories) =>{
         catagoryContainer.appendChild(catagoryDiv);
         // console.log(catagory)
     });
+    togggle(true);
 }
 
 const catagoryLoadDeatails = (category_id) => {
@@ -37,6 +38,14 @@ const catagoryLoadDeatails = (category_id) => {
 const displayCatagoryDetails = (catagoryDetails) =>{
     const detailsContainer = document.getElementById('detail');
     detailsContainer.innerHTML = '';
+    let total_news = document.getElementById('news_found');
+    if(catagoryDetails.length>0){
+        total_news.innerText = catagoryDetails.length + ' Items Found'
+    }
+    else
+    {
+        total_news.innerText = 'No Item Found'
+    }
     catagoryDetails.forEach(catagoryDetail => {
         const catagoryDetailsDiv = document.createElement('div');
         catagoryDetailsDiv.classList.add('data')
@@ -48,7 +57,7 @@ const displayCatagoryDetails = (catagoryDetails) =>{
                     <div class="col-md-8">
                         <div class="card-body">
                         <h5 class="card-title pb-3">${catagoryDetail.title}</h5>
-                        <p class="card-text">${catagoryDetail.details}</p>
+                        <p class="card-text">${catagoryDetail.details.slice(1,250) + '...'}</p>
                         <div class="d-flex author justify-content-between align-items-center mt-3">
                         <div class="profile-img d-flex align-items-center">
                          
@@ -74,6 +83,7 @@ const displayCatagoryDetails = (catagoryDetails) =>{
         detailsContainer.appendChild(catagoryDetailsDiv);
       
     });
+    togggle(false);
 }
 
 const modalData = (_id) =>{
@@ -96,7 +106,17 @@ const displayModal = (id) =>{
 }
 
 
-
+let togggle = (isloading) =>
+{
+    let loder = document.getElementById('lodder');
+    if(isloading){
+        loder.classList.remove('d-none');
+    }
+    else
+    {
+        loder.classList.add('d-none')
+    }
+}
 
 loadCatagory();
 // modalData();
