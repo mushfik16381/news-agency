@@ -1,7 +1,13 @@
 const loadCatagory = () =>{
-    fetch(`https://openapi.programming-hero.com/api/news/categories`)
-    .then(res => res.json())
-    .then(data => displayCatagory(data.data.news_category))
+    const url = `https://openapi.programming-hero.com/api/news/categories`
+    try{
+        fetch(url)
+        .then(res => res.json())
+        .then(data => displayCatagory(data.data.news_category))
+    }
+    catch (error){
+        console.log(error);
+    }
 }
 const displayCatagory = (catagories) =>{
     const catagoryContainer = document.getElementById('catagory');
@@ -18,9 +24,14 @@ const displayCatagory = (catagories) =>{
 
 const catagoryLoadDeatails = (category_id) => {
     const url = ` https://openapi.programming-hero.com/api/news/category/${category_id}`
-    fetch(url)
-    .then(res => res.json())
-    .then(data => displayCatagoryDetails(data.data))
+    try{
+        fetch(url)
+        .then(res => res.json())
+        .then(data => displayCatagoryDetails(data.data))
+    }
+    catch (error){
+        console.log(error);
+    }
 }
 
 const displayCatagoryDetails = (catagoryDetails) =>{
@@ -44,11 +55,11 @@ const displayCatagoryDetails = (catagoryDetails) =>{
                                 <img class="img-fluid profile-img" src="${catagoryDetail.author.img}" alt="">
                       
                             <div class="text ">
-                                <p style="color: #FF6F3F;">${catagoryDetail.author.name ? catagoryDetail.author.name: 'no author found'}</p>
-                                <p>${catagoryDetail.author.published_date ? catagoryDetail.author.published_date: 'no date found'}</p>
+                                <p style="color: #FF6F3F;">${catagoryDetail.author.name ? catagoryDetail.author.name: 'No author found'}</p>
+                                <p>${catagoryDetail.author.published_date ? catagoryDetail.author.published_date: 'No date found'}</p>
                             </div>
                         </div>
-                        <div><p>${catagoryDetail.total_view ? catagoryDetail.total_view: 'no view'}</p></div>
+                        <div><p>${catagoryDetail.total_view ? catagoryDetail.total_view: 'No view'}</p></div>
                         <div>
                         <button onclick="modalData('${catagoryDetail._id}')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Read More
@@ -67,9 +78,14 @@ const displayCatagoryDetails = (catagoryDetails) =>{
 
 const modalData = (_id) =>{
     const url = ` https://openapi.programming-hero.com/api/news/${_id}`
-    fetch(url)
-    .then(res => res.json())
-    .then(data => displayModal(data.data[0]))
+    try{
+        fetch(url)
+        .then(res => res.json())
+        .then(data => displayModal(data.data[0]))
+    }
+    catch (error){
+        console.log(error);
+    }
 }
 
 const displayModal = (id) =>{
