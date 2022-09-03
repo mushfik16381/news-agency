@@ -50,7 +50,7 @@ const displayCatagoryDetails = (catagoryDetails) =>{
                         </div>
                         <div><p>${catagoryDetail.total_view ? catagoryDetail.total_view: 'no view'}</p></div>
                         <div>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button onclick="modalData('${catagoryDetail._id}')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Read More
                         </button>
                         </div>
@@ -65,7 +65,25 @@ const displayCatagoryDetails = (catagoryDetails) =>{
     });
 }
 
+let modalData = (_id) =>
+{
+    let url = ` https://openapi.programming-hero.com/api/news/${_id}`
+    fetch(url)
+    .then(res => res.json())
+    .then(res => displayModal(res.data[0]))
+}
+
+let displayModal = (id) =>
+{
+    let modalTitle = document.getElementById('exampleModalLabel');
+    modalTitle.innerText = id.title;
+    let discription = document.getElementById('modal-text');
+    discription.innerText = id.details;
+}
 
 
-catagoryLoadDeatails()
-loadCatagory()
+
+
+loadCatagory();
+// modalData();
+// catagoryLoadDeatails();
