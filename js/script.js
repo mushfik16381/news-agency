@@ -38,13 +38,13 @@ const catagoryLoadDeatails = (category_id) => {
 const displayCatagoryDetails = (catagoryDetails) =>{
     const detailsContainer = document.getElementById('detail');
     detailsContainer.innerHTML = '';
-    let total_news = document.getElementById('news_found');
+    let totalNews = document.getElementById('news-found');
     if(catagoryDetails.length>0){
-        total_news.innerText = catagoryDetails.length + ' Items Found'
+        totalNews.innerText = catagoryDetails.length + ' Items Found'
     }
     else
     {
-        total_news.innerText = 'No Item Found'
+        totalNews.innerText = 'No Item Found'
     }
     catagoryDetails.forEach(catagoryDetail => {
         const catagoryDetailsDiv = document.createElement('div');

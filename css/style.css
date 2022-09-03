@@ -64,7 +64,7 @@ ul{
 }
 
 
-#total_news
+#total-news
 {
     margin-bottom: 30px;
     -webkit-border-radius: 12px;
@@ -78,11 +78,11 @@ ul{
     padding: 10px;
 }
 
-#total_news p
+#total-news p
 {
     font-size: 22px;
     font-weight: 600;
-    color: #FF6F3F;
+    color: #5D5FEF;
 }
 
 
@@ -109,5 +109,22 @@ border-radius: 50%;
 @media screen and (max-width: 576px){
     ul{
         display: block !important;
+    }
+    #total-news{
+        width: 95%;
+        margin-top: 20px;
+    }
+    .data img{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .profile-img img{
+        width: 35%;
+    }
+    .profile-img p{
+        font-size: 10px !important;
+    }
+    .author button{
+        font-size: 11px;
     }
 }
