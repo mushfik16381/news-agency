@@ -9,6 +9,7 @@ const loadCatagory = () =>{
         console.log(error);
     }
 }
+
 const displayCatagory = (catagories) =>{
     const catagoryContainer = document.getElementById('catagory');
     catagories.forEach(catagory => {
@@ -119,5 +120,5 @@ let togggle = (isloading) =>
 }
 
 loadCatagory();
-// modalData();
-// catagoryLoadDeatails();
+modalData();
+catagoryLoadDeatails('08');
