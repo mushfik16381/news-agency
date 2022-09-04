@@ -35,7 +35,11 @@ const catagoryLoadDeatails = (category_id) => {
         console.log(error);
     }
 }
-
+function compare(a, b){ 
+    if(a.total_view < b.total_view)return 1; 
+    else if(a.total_view > b.total_view)return -1; 
+    else return 0; 
+}
 const displayCatagoryDetails = (catagoryDetails) =>{
     const detailsContainer = document.getElementById('detail');
     detailsContainer.innerHTML = '';
@@ -47,6 +51,8 @@ const displayCatagoryDetails = (catagoryDetails) =>{
     {
         totalNews.innerText = 'No Item Found'
     }
+
+    catagoryDetails.sort(compare);
     catagoryDetails.forEach(catagoryDetail => {
         const catagoryDetailsDiv = document.createElement('div');
         catagoryDetailsDiv.classList.add('data')
