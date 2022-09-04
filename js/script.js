@@ -62,7 +62,7 @@ const displayCatagoryDetails = (catagoryDetails) =>{
                     <img src="${catagoryDetail.thumbnail_url}" class="img-fluid rounded-start" alt="...">
                 </div>
                     <div class="col-md-8">
-                        <div class="card-body">
+                        <div class="card-body pt-3">
                         <h5 class="card-title pb-3">${catagoryDetail.title}</h5>
                         <p class="card-text">${catagoryDetail.details.slice(1,380) + '...'}</p>
                         <div class="d-flex author justify-content-between align-items-center mt-3">
